@@ -1,2 +1,2 @@
 #!/bin/bash
-mv README.md /tmp/u
+mv [A-Z]* /tmp/u
