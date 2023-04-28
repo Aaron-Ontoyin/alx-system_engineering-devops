@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Uses while loop and case structure to print numbers,
+# switches certain numbers
 
 i=1
 
