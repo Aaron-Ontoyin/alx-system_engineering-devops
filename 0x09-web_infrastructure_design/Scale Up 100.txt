@@ -1,0 +1,17 @@
+Specifics about the additional elements in the infrastructure:
+
+1. Server: The additional server is added to increase the capacity and scalability of the infrastructure. By adding another server, the system can handle a higher volume of incoming traffic, distribute the workload effectively, and provide redundancy in case of server failures. This improves the overall performance and availability of the services.
+
+2. Load Balancer (HAproxy) configured as a cluster: The load balancer is added to distribute incoming traffic across multiple servers. Configuring the load balancer as a cluster enhances high availability and fault tolerance. If one load balancer fails, the remaining load balancers in the cluster can seamlessly handle the traffic, ensuring uninterrupted service. This configuration improves scalability and reliability.
+
+3. Split Components: Splitting the components (web server, application server, and database) onto their own dedicated servers is done for several reasons:
+
+- Isolation and performance: Separating components onto different servers ensures that each component can utilize resources independently, leading to better performance and resource allocation. This isolation prevents resource contention and allows for optimized configuration and scaling for each component.
+
+- Scalability and flexibility: By separating components, each can be scaled independently based on its specific requirements. For example, if the database is experiencing high load, additional database servers can be added without affecting the web or application servers. This flexibility allows for efficient resource utilization and better handling of increased traffic.
+
+- Fault tolerance: Splitting components onto separate servers enhances fault tolerance. If one component or server fails, it does not bring down the entire system. For example, if the web server fails, the application server and database can continue to operate independently, minimizing the impact on the overall service.
+
+- Security and access control: Splitting components allows for more granular security controls and access restrictions. Each component can have its own set of permissions and security measures, reducing the risk of unauthorized access or data breaches.
+
+By adding these additional elements and splitting components, the infrastructure gains scalability, high availability, fault tolerance, performance optimization, and improved security.

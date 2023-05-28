@@ -1,0 +1,19 @@
+Specifics about this infrastructure:
+
+1. Load Balancer: The load balancer is added to distribute incoming traffic across multiple servers to ensure efficient utilization of resources and improve overall system performance. It helps prevent overload on individual servers and provides high availability by redirecting requests to healthy servers.
+
+2. Distribution Algorithm: The load balancer is configured with a round-robin distribution algorithm. This algorithm distributes incoming requests equally among the available servers in a cyclic manner. Each server receives requests in turn, ensuring a balanced workload distribution.
+
+3. Active-Active vs. Active-Passive Setup: The load balancer enables an Active-Passive setup. In an Active-Active setup, multiple servers are actively handling incoming requests simultaneously. In an Active-Passive setup, only one server (active) processes requests while the others (passive) are on standby, ready to take over if the active server fails. This setup provides redundancy and failover capabilities.
+
+4. Database Primary-Replica (Master-Slave) Cluster: The primary-replica cluster consists of a primary database node and one or more replica nodes. The primary node handles read and write operations, while the replica nodes asynchronously replicate data from the primary node. This setup ensures data redundancy, scalability, and fault tolerance.
+
+5. Difference between Primary and Replica nodes: The primary node in the database cluster is responsible for handling read and write operations. It serves as the authoritative source for data modifications. Replica nodes, on the other hand, synchronize data from the primary node and serve as standby copies. They are used for read operations and can take over as the primary node if the current primary fails.
+
+Issues with this infrastructure:
+
+1. Single Points of Failure (SPOFs): The infrastructure may have potential SPOFs, such as a single load balancer or a single primary database node. If any of these components fail, it can result in service disruption or downtime.
+
+2. Security Issues: The absence of a firewall leaves the infrastructure vulnerable to unauthorized access, malicious attacks, or data breaches. Additionally, the lack of HTTPS encryption for data transmission can expose sensitive information to interception or manipulation.
+
+3. Lack of Monitoring: Without proper monitoring tools and processes in place, it becomes challenging to identify and address performance issues, resource bottlenecks, or potential failures promptly. Monitoring helps ensure the infrastructure's stability, performance, and security.

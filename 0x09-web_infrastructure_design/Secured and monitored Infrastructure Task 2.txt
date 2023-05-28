@@ -1,0 +1,21 @@
+Specifics about the additional elements in the infrastructure:
+
+1. Firewalls: Firewalls are added to enhance the security of the infrastructure. They act as a barrier between the internal network and external threats, monitoring and controlling incoming and outgoing network traffic. Firewalls can prevent unauthorized access, protect against malicious activities, and enforce security policies.
+
+2. SSL Certificate and HTTPS: Adding an SSL certificate enables the server to serve the website over HTTPS (HTTP Secure). HTTPS encrypts the data transmitted between the server and the client's browser, ensuring privacy and integrity. It protects sensitive information from being intercepted or tampered with during transmission, enhancing the security of user interactions, especially when handling sensitive data like passwords or financial information.
+
+3. Monitoring: Monitoring is used to ensure the performance, availability, and security of the infrastructure. By deploying monitoring clients, data collectors, or monitoring tools like Sumologic, the system can gather real-time metrics, logs, and other relevant data about the servers, network, and applications. Monitoring allows proactive identification of issues, capacity planning, troubleshooting, and performance optimization.
+
+4. Data Collection in Monitoring: The monitoring tool collects data by integrating with various components of the infrastructure, such as servers, network devices, and applications. It may use agent-based monitoring, where monitoring agents are installed on the servers to collect and transmit data. Alternatively, it can utilize agentless monitoring, which relies on protocols like SNMP, WMI, or APIs to gather information remotely.
+
+Monitoring your web server QPS:
+
+To monitor the web server's queries per second (QPS), you can set up a monitoring tool that captures relevant metrics. The monitoring tool should be configured to collect data such as the total number of incoming requests and responses from the web server within a specific time frame. This data can then be analyzed and visualized to determine the QPS and identify any anomalies or performance issues.
+
+Issues with this infrastructure:
+
+1. Terminating SSL at the load balancer level: Terminating SSL at the load balancer means decrypting the incoming HTTPS traffic at the load balancer before distributing it to backend servers. While this offloads the SSL processing from the backend servers, it can be an issue if the load balancer becomes a bottleneck or a single point of failure. Additionally, end-to-end encryption is lost between the load balancer and backend servers.
+
+2. Single MySQL server accepting writes: Having only one MySQL server capable of accepting writes introduces a single point of failure and potential performance bottleneck. If the primary MySQL server fails, it can lead to data unavailability and service disruption. It is recommended to have a replicated setup with multiple MySQL servers to ensure high availability and distribute the write load.
+
+3. Servers with the same components: Having servers with identical components (database, web server, and application server) might be a problem if a critical issue affects all servers simultaneously. For example, a vulnerability or a misconfiguration in a common component can lead to a widespread impact across the entire infrastructure. Diversifying the server components or implementing redundancy measures can mitigate this risk and improve fault tolerance.
