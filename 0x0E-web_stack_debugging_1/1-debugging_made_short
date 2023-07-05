@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# Fixes listening port of Ngnix server; better script
-sudo sed -i "s/listen 8080/listen 80/" /etc/nginx/sites-enabled/default
+# Fixes Ngnix server
+sudo sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
 sudo service nginx restart
