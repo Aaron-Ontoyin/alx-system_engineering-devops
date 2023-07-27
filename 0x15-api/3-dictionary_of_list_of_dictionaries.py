@@ -11,7 +11,7 @@ if __name__ == "__main__":
     users = requests.get("https://jsonplaceholder.typicode.com/users").json()
     todos = requests.get("https://jsonplaceholder.typicode.com/todos").json()
 
-    todos = {}
+    allTodos = {}
     for user in users:
         tasks = []
         for task in todos:
@@ -22,7 +22,7 @@ if __name__ == "__main__":
                     "completed": task.get("completed"),
                 }
                 tasks.append(taskDict)
-        todos[user.get("id")] = tasks
+        allTodos[user.get("id")] = tasks
 
     with open("todo_all_employees.json", mode="w") as f:
         json.dump(todos, f)
