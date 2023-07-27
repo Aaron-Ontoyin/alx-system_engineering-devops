@@ -26,7 +26,9 @@ if __name__ == "__main__":
             totalTasks += 1
 
     print(
-        "Employee {} is done with tasks({}/{}):".format(name, totalTasks, len(jsonReq))
+        "Employee {} is done with tasks({}/{}):".format(
+            name, totalTasks, len(jsonReq)
+        )
     )
 
     for doneTasks in jsonReq:
