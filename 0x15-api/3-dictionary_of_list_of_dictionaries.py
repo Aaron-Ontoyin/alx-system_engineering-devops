@@ -25,4 +25,4 @@ if __name__ == "__main__":
         allTodos[user.get("id")] = tasks
 
     with open("todo_all_employees.json", mode="w") as f:
-        json.dump(todos, f)
+        json.dump(allTodos, f)
