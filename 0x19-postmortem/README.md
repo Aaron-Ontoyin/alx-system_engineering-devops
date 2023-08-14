@@ -5,6 +5,9 @@
 - **Impact:** The user authentication service experienced an outage, affecting all users attempting to log in. Approximately 60% of users were unable to access the system.
 - **Root Cause:** An expired SSL certificate caused the authentication service to become inaccessible.
 
+**Sequence Diagram:**
+![Sequence Diagram](postmortem.png)
+
 **Timeline:**
 - **Detected:** August 15, 2023, 14:30 UTC
 - **Detection Method:** Monitoring alert triggered due to high rate of failed authentication attempts.
